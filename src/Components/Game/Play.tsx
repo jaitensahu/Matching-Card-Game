@@ -12,7 +12,7 @@ import ShowMatchMsg from "../showMatchMessage/ShowMatchMsg";
 import ShowScore from "../ShowScoreComponent/ShowScore";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { myContext } from "../Context/Context";
+import { myContext, myContextData } from "../Context/Context";
 
 // Defining type of all the states
 interface PlayProps {
@@ -61,7 +61,7 @@ const Play = () => {
     reset,
     loseAudio,
     audio
-  } = useContext<PlayProps>(myContext);
+  } = useContext<myContextData>(myContext);
 
 
   // Shuffle The Array Data whenever isShowScore gets updated 
@@ -88,16 +88,18 @@ const Play = () => {
   }, [isMatched]);
 
 
-// OnChange of lives state variable will check if Live == 0 change ShowScore state to True
+  // OnChange of lives state variable will check if Live == 0 change ShowScore state to True
   useEffect(() => {
     if (lives == 0) {
       setTimeout(() => {
         setIsShowScore(true);
         // will play winning or losing music 
         if (score < 3) {
-          loseAudio.play();
+          console.log(loseAudio);
+          
+            loseAudio?.play();
         } else {
-          winningMusic.play();
+            winningMusic?.play();
         }
       }, 900);
     }
@@ -120,7 +122,7 @@ const Play = () => {
     inactiveFillColor: "white",
     inactiveBoxColor: "#FBCFE8",
   };
-// -----------Custom Heart Ends Here--------------
+  // -----------Custom Heart Ends Here--------------
 
   const navigateTo = useNavigate();
   return (
@@ -209,7 +211,7 @@ const Play = () => {
         src={backImage}
         onClick={() => {
           navigateTo("/instructions")
-          audio.play()
+          audio?.play()
         }}
         alt=""
       />

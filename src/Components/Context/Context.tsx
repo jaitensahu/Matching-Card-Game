@@ -4,17 +4,51 @@ import matchSound from "../../assets/matchMusic.wav";
 import loseSound from "../../assets/loseSound.wav";
 import shuffle from "../../assets/shuffle.mp3";
 import winningMusicc from "../../assets/winnigMusic.wav";
-export let myContext = createContext({});
 import { FC, ReactNode } from "react";
+
+export interface myContextData {
+  score: number;
+  setScore: React.Dispatch<React.SetStateAction<number>>;
+  fruitId: number;
+  isClicked: boolean[];
+  setIsClicked: React.Dispatch<React.SetStateAction<boolean[]>>;
+  fruitArr: { id: number; shouldVisible: boolean, fruit: string }[];
+  setFruitArr: React.Dispatch<React.SetStateAction<{ id: number; shouldVisible: boolean; fruit: string }[]>>;
+  lives: number;
+  isHideCardContainer: boolean;
+  alphabetArr: { id: number; shouldVisible: boolean,alphabet: string }[];
+  isAlphabetClicked: boolean[];
+  isMatched: boolean;
+  isShowScore: boolean;
+  audio: HTMLAudioElement | null;
+  matchAudio: HTMLAudioElement | null;
+  loseAudio: HTMLAudioElement | null;
+  shuffleAudio: HTMLAudioElement | null;
+  winningMusic: HTMLAudioElement | null;
+  blueCardClickHandler: (index: number, alphabetId: number) => void;
+  pinkCardClickHandler: (index: number, id: number) => void; 
+  shuffleArray: (array: any[]) => any[];
+  setAlphabetArr: React.Dispatch<React.SetStateAction<{ id: number; shouldVisible: boolean,alphabet:string }[]>>;
+  setisAlphabetClicked: React.Dispatch<React.SetStateAction<boolean[]>>;
+  setFalseArr: React.Dispatch<React.SetStateAction<boolean[]>>;
+  hideMatchedCards: (modifiedAlphabetData: any[], modifiedData: any[]) => void;
+  setIsMatched: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsShowScore: React.Dispatch<React.SetStateAction<boolean>>;
+  reset: () => void;
+  setLive: React.Dispatch<React.SetStateAction<number>>;
+  falseArr: boolean[];
+}
+
+export let myContext = createContext<myContextData>({} as myContextData);
 
 const Context: FC<{ children: ReactNode }> = ({ children }) => {
   let [score, setScore] = useState<number>(0);
   let [fruitId, setFruitId] = useState<number>(0);
   let [isClicked, setIsClicked] = useState<boolean[]>(Array(6).fill(false));
-  let [fruitArr, setFruitArr] = useState<{ id: number, shouldVisible: boolean }[]>([]);
+  let [fruitArr, setFruitArr] = useState<{ id: number, shouldVisible: boolean, fruit: string }[]>([]);
   let [lives, setLive] = useState<number>(5);
   let [isHideCardContainer, setIsHideCardContainer] = useState<boolean>(false);
-  let [alphabetArr, setAlphabetArr] = useState<{ id: number, shouldVisible: boolean }[]>([]);
+  let [alphabetArr, setAlphabetArr] = useState<{ id: number, shouldVisible: boolean, alphabet: string }[]>([]);
   let [isAlphabetClicked, setisAlphabetClicked] = useState<boolean[]>(Array(6).fill(false));
   let [isMatched, setIsMatched] = useState(false);
   let audio = new Audio(btnClickSound);
@@ -24,6 +58,7 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
   let winningMusic = new Audio(winningMusicc);
   let falseArr = Array(6).fill(false);
   let [isShowScore, setIsShowScore] = useState(false);
+  
 
   // Function to suffle the data on reloading
   function shuffleArray(array: any[]) {
@@ -160,6 +195,8 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
         setIsShowScore,
         reset,
         setLive,
+        matchAudio,
+        shuffleAudio,
         audio,
         loseAudio,
         winningMusic,

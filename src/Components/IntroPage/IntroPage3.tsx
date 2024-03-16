@@ -5,7 +5,7 @@ import popUpmessageBg from "../../assets/popUpmessageBg.png";
 import yesBtn from "../../assets/YesImg.png";
 import backImage from "../../assets/backImage.png";
 import grayBanana from "../../assets/bananaGray.png";
-import { myContext } from "../Context/Context";
+import { myContext, myContextData } from "../Context/Context";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,7 +15,7 @@ interface MyContextType {
 }
 const IntroPage3 = () => {
 // Getting audio from context
-let { audio } = useContext<MyContextType>(myContext);
+let { audio } = useContext<myContextData>(myContext);
 
 
   const navigateTo = useNavigate();
@@ -46,7 +46,7 @@ let { audio } = useContext<MyContextType>(myContext);
         className="backImg"
         src={backImage}
         onClick={() => {navigateTo("/2")
-        audio.play();
+        audio?.play();
       }}
         alt=""
       />
@@ -56,7 +56,7 @@ let { audio } = useContext<MyContextType>(myContext);
         src={yesBtn}
         onClick={() => {
           navigateTo("/instructions");
-          audio.play();
+          audio?.play();
         }}
         alt=""
       />

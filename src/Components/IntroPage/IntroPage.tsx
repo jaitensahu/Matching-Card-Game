@@ -3,13 +3,13 @@ import bgImage from "../../assets/backgroundImage.png";
 import monkeyImg from "../../assets/monkeyImg.png";
 import popUpmessageBg from "../../assets/popUpmessageBg.png";
 import startImg from "../../assets/startImg.png";
-import { myContext } from "../Context/Context";
+import { myContext, myContextData } from "../Context/Context";
 import { useNavigate } from "react-router-dom";
 interface MyContextType {
   audio: any;
 }
 const IntroPage = () => {
-  let { audio } = useContext<MyContextType>(myContext);
+  let { audio } = useContext<myContextData>(myContext);
   const navigateTo = useNavigate();
 
   return (
@@ -29,7 +29,7 @@ const IntroPage = () => {
         src={startImg}
         onClick={() => {
           navigateTo("/2");
-          audio.play();
+          audio?.play();
         }}
         alt=""
       />

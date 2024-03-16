@@ -5,7 +5,7 @@ import grayBanana from "../../assets/bananaGray.png";
 import playBtn from "../../assets/playImg.png";
 import backImage from "../../assets/backImage.png";
 import { useNavigate } from "react-router-dom";
-import { myContext } from "../Context/Context";
+import { myContext, myContextData } from "../Context/Context";
 import card01 from "../../assets/pinkCard01.png";
 import card02 from "../../assets/blueCard02.png";
 import card03 from "../../assets/card03.png";
@@ -14,7 +14,7 @@ interface MyContextType {
   audio: any;
 }
 const Instruction = () => {
-  let { audio } = useContext<MyContextType>(myContext);
+  let { audio } = useContext<myContextData>(myContext);
 
   const navigateTo = useNavigate();
 
@@ -42,7 +42,7 @@ const Instruction = () => {
         className="backImg"
         src={backImage}
         onClick={() => {navigateTo("/3")
-        audio.play();
+        audio?.play();
       }}
         alt=""
       />
@@ -51,7 +51,7 @@ const Instruction = () => {
         src={playBtn}
         onClick={() => {
           navigateTo("/play");
-          audio.play();
+          audio?.play();
         }}
         alt=""
       />
