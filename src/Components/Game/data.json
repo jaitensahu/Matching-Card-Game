@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "fruit": "../../../static/images/AppleImg.png",
+    "shouldVisible":true
+  },
+  {
+    "id": 2,
+    "fruit": "../../../static/images/banana.png",
+    "shouldVisible":true
+  },
+  {
+    "id": 3,
+    "fruit": "../../../static/images/grapes.png",
+    "shouldVisible": true
+  },
+  {
+    "id": 4,
+    "fruit": "../../../static/images/pineAppleImg.png",
+    "shouldVisible": true
+  },
+  {
+    "id": 5,
+    "fruit": "../../../static/images/orangeImage.png",
+    "shouldVisible": true
+  },
+  {
+    "id": 6,
+    "fruit": "../../../static/images/strawberry.png",
+    "shouldVisible": true
+  }
+]

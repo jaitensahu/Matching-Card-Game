@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "alphabet": "../../../static/images/A.png",
+    "shouldVisible": true
+  },
+  {
+    "id": 2,
+    "alphabet": "../../../static/images/B.png",
+    "shouldVisible": true
+  },
+  {
+    "id": 3,
+    "alphabet": "../../../static/images/G.png",
+    "shouldVisible": true
+  },
+  {
+    "id": 4,
+    "alphabet": "../../../static/images/P.png",
+    "shouldVisible": true
+  },
+  {
+    "id": 5,
+    "alphabet": "../../../static/images/O.png",
+    "shouldVisible": true
+  },
+  {
+    "id": 6,
+    "alphabet": "../../../static/images/S.png",
+    "shouldVisible": true
+  }
+]
