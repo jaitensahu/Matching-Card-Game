@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import bgImage from "../../assets/backgroundImage.png";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import grayBanana from "../../assets/bananaGray.png";
@@ -10,9 +10,7 @@ import card01 from "../../assets/pinkCard01.png";
 import card02 from "../../assets/blueCard02.png";
 import card03 from "../../assets/card03.png";
 
-interface MyContextType {
-  audio: any;
-}
+ 
 const Instruction = () => {
   let { audio } = useContext<myContextData>(myContext);
 

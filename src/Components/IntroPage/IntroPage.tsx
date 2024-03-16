@@ -5,9 +5,7 @@ import popUpmessageBg from "../../assets/popUpmessageBg.png";
 import startImg from "../../assets/startImg.png";
 import { myContext, myContextData } from "../Context/Context";
 import { useNavigate } from "react-router-dom";
-interface MyContextType {
-  audio: any;
-}
+ 
 const IntroPage = () => {
   let { audio } = useContext<myContextData>(myContext);
   const navigateTo = useNavigate();

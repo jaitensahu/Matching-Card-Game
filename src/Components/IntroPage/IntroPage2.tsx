@@ -7,9 +7,7 @@ import backImage from "../../assets/backImage.png";
 import { myContext, myContextData } from "../Context/Context";
 import { useNavigate } from "react-router-dom";
 
-interface MyContextType {
-  audio: any;
-}
+ 
 
 const IntroPage2 = () => {
   let { audio } = useContext<myContextData>(myContext);

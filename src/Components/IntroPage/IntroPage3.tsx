@@ -10,9 +10,7 @@ import { useNavigate } from "react-router-dom";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-interface MyContextType {
-  audio: any;
-}
+ 
 const IntroPage3 = () => {
 // Getting audio from context
 let { audio } = useContext<myContextData>(myContext);

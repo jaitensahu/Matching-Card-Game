@@ -5,15 +5,12 @@ import "../Game/Play.css";
 import head from "../../assets/Head.png";
 import body from "../../assets/Body2.png";
 import sad from '../../assets/sad.png'
-import { myContext } from "../Context/Context";
+import { myContext, myContextData } from "../Context/Context";
 
-interface MyContextType {
-    score: number;
-    reset: () => void;
-}
+ 
 const ShowScore = () => {
   // Getting States from context
-    let { score, reset } = useContext<MyContextType>(myContext);
+    let { score, reset } = useContext<myContextData>(myContext);
 
   return (
     <div className="reward">

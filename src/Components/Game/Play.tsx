@@ -15,29 +15,7 @@ import "@smastrom/react-rating/style.css";
 import { myContext, myContextData } from "../Context/Context";
 
 // Defining type of all the states
-interface PlayProps {
-  score: number;
-  shuffleArray: Function;
-  pinkCardClickHandler: Function;
-  isClicked: boolean[];
-  setFruitArr: Function;
-  fruitArr: any[];
-  alphabetArr: any[];
-  setAlphabetArr: Function;
-  isAlphabetClicked: boolean[];
-  blueCardClickHandler: Function;
-  isMatched: boolean;
-  setIsMatched: Function;
-  isShowScore: boolean;
-  lives: number;
-  setIsShowScore: Function;
-  setLive: Function;
-  winningMusic: any;
-  isHideCardContainer: boolean;
-  reset: Function;
-  loseAudio: any;
-  audio: any;
-}
+ 
 const Play = () => {
   // Getting States From Context
   const {
