@@ -163,6 +163,7 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
   if (lives == 0 || score == 6) {
     setTimeout(() => {
       setIsHideCardContainer(true);
+      
     }, 800);
   }
   // -------------------------

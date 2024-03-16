@@ -65,6 +65,7 @@ const Play = () => {
     };
   }, [isMatched]);
 
+console.log(score);
 
   // OnChange of lives state variable will check if Live == 0 change ShowScore state to True
   useEffect(() => {
@@ -72,12 +73,13 @@ const Play = () => {
       setTimeout(() => {
         setIsShowScore(true);
         // will play winning or losing music 
-        if (score < 3) {
+        if (score < 3  ) {
           console.log(loseAudio);
-          
             loseAudio?.play();
         } else {
             winningMusic?.play();
+          console.log("won",winningMusic);
+
         }
       }, 900);
     }
